@@ -79,9 +79,9 @@ public class Main extends Application {
 		background.add(new End(141 + 141-13+141-13+141-13+3,96));
 		animal = new Animal("file:src/assets/img/froggerUp.png");
 		background.add(animal);
-		background.add(new Obstacle("file:src/assets/img/truck1"+"Right.png", 0, 649, 1, 120, 120));
-		background.add(new Obstacle("file:src/assets/img/truck1"+"Right.png", 300, 649, 1, 120, 120));
-		background.add(new Obstacle("file:src/assets/img/truck1"+"Right.png", 600, 649, 1, 120, 120));
+		background.add(new Obstacle("file:src/assets/img/truck1Right.png", 0, 649, 1, 120, 120));
+		background.add(new Obstacle("file:src/assets/img/truck1Right.png", 300, 649, 1, 120, 120));
+		background.add(new Obstacle("file:src/assets/img/truck1Right.png", 600, 649, 1, 120, 120));
 		//background.add(new Obstacle("file:src/assets/img/truck1"+"Right.png", 720, 649, 1, 120, 120));
 		background.add(new Obstacle("file:src/assets/img/car1Left.png", 100, 597, -1, 50, 50));
 		background.add(new Obstacle("file:src/assets/img/car1Left.png", 250, 597, -1, 50, 50));
