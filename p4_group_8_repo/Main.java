@@ -5,9 +5,14 @@ import java.util.List;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
@@ -15,18 +20,41 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Main extends Application {
+	
+	Stage window;
+	Scene Menu, Game;
+	
 	AnimationTimer timer;
 	MyStage background;
 	Animal animal;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-	    background = new MyStage();
-	    Scene scene  = new Scene(background,600,800);
-
+		
+		window = primaryStage;
+		
+		//Button 1
+		Label label1 = new Label("Welcome to Frogger Game");
+		Button button1 = new Button("Go to game");
+		button1.setOnAction(e -> window.setScene(Game));
+		
+		//Main Menu layout
+		VBox mainMenu = new VBox(50);
+		mainMenu.getChildren().addAll(label1, button1);
+		Menu = new Scene(mainMenu, 600, 800);
+		
+		//Game layout
+		background = new MyStage();
+	    Game  = new Scene(background,600,800);
+	    
+	    window.setScene(Menu);
+	    window.setTitle("Frogger Game");
+		window.show();
+		
 		BackgroundImage froggerback = new BackgroundImage("file:src/assets/img/bgtest.png");
 	    
 		background.add(froggerback);
@@ -47,11 +75,11 @@ public class Main extends Application {
 		background.add(new WetTurtle(400, 217, -1, 130, 130));
 		background.add(new WetTurtle(200, 217, -1, 130, 130));
 
-		background.add(new End(13,96)); // End represent the boxes at the end of the map
-        background.add(new End(141,96));
-        background.add(new End(141 + 141-13,96));
-        background.add(new End(141 + 141-13+141-13+1,96));
-        background.add(new End(141 + 141-13+141-13+141-13+3,96));
+		background.add(new End(13, 96)); // End represent the boxes at the end of the map
+        background.add(new End(141, 96));
+        background.add(new End(269, 96));
+        background.add(new End(398, 96));
+        background.add(new End(528, 96));
 		
 		animal = new Animal("file:src/assets/img/froggerUp.png");
 		
@@ -69,8 +97,7 @@ public class Main extends Application {
 		background.add(new Obstacle("file:src/assets/img/car1Left.png", 500, 490, -1, 50, 50));
 		background.add(new Digit(0, 30, 360, 25));
 		background.start();
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		
 		start();  
 	}
 	public void createTimer() {
