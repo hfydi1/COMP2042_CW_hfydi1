@@ -10,16 +10,19 @@ import javafx.scene.input.KeyEvent;
 
 
 public class Animal extends Actor {
-	Image imgW1;
-	Image imgA1;
-	Image imgS1;
-	Image imgD1;
-	Image imgW2;
-	Image imgA2;
-	Image imgS2;
-	Image imgD2;
+	
+	private Image imgW1;
+	private Image imgA1;
+	private Image imgS1;
+	private Image imgD1;
+	private Image imgW2;
+	private Image imgA2;
+	private Image imgS2;
+	private Image imgD2;
+	
 	int points = 0;
 	int end = 0;
+	
 	private boolean second = false;
 	boolean noMove = false;
 	double movement = 13.3333333*2;
@@ -212,9 +215,9 @@ public class Animal extends Actor {
 		}
 		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
 			if(getIntersectingObjects(Log.class).get(0).getLeft())
-				move(-2,0);
+				move(-1,0);
 			else
-				move (.75,0);
+				move (0.2,0);
 		}
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) {
 			move(-1,0);
@@ -241,7 +244,7 @@ public class Animal extends Actor {
 			setY(679.8+movement);
 		}
 		else if (getY()<413){
-			waterDeath = true;
+			waterDeath = false;
 			//setX(300);
 			//setY(679.8+movement);
 		}
@@ -262,6 +265,70 @@ public class Animal extends Actor {
 		return false;
 		
 	}
-	
+
+	public Image getImgW1() {
+		return imgW1;
+	}
+
+	public void setImgW1(Image imgW1) {
+		this.imgW1 = imgW1;
+	}
+
+	public Image getImgA1() {
+		return imgA1;
+	}
+
+	public void setImgA1(Image imgA1) {
+		this.imgA1 = imgA1;
+	}
+
+	public Image getImgS1() {
+		return imgS1;
+	}
+
+	public void setImgS1(Image imgS1) {
+		this.imgS1 = imgS1;
+	}
+
+	public Image getImgD1() {
+		return imgD1;
+	}
+
+	public void setImgD1(Image imgD1) {
+		this.imgD1 = imgD1;
+	}
+
+	public Image getImgW2() {
+		return imgW2;
+	}
+
+	public void setImgW2(Image imgW2) {
+		this.imgW2 = imgW2;
+	}
+
+	public Image getImgA2() {
+		return imgA2;
+	}
+
+	public void setImgA2(Image imgA2) {
+		this.imgA2 = imgA2;
+	}
+
+	public Image getImgS2() {
+		return imgS2;
+	}
+
+	public void setImgS2(Image imgS2) {
+		this.imgS2 = imgS2;
+	}
+
+	public Image getImgD2() {
+		return imgD2;
+	}
+
+	public void setImgD2(Image imgD2) {
+		this.imgD2 = imgD2;
+	}
+
 
 }
