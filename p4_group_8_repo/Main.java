@@ -37,20 +37,42 @@ public class Main extends Application {
 		
 		window = primaryStage;
 		
-		//Button 1
+		//Buttons
+		//Play Game Button 
 		Label label1 = new Label("Welcome to Frogger Game!");
 		Button button1 = new Button("Go to game");
 		button1.setOnAction(e -> window.setScene(Game));
 		
-		//Button 2
+		//Change Difficulty Button
 		Label label2 = new Label("Change game difficulty:");
 		Button button2 = new Button("Change");
-		button2.setOnAction(e -> window.setScene(Difficulty));		
+		button2.setOnAction(e -> window.setScene(Difficulty));	
 		
+		//Change Difficulty Button (Easy)
+		Label label3 = new Label("EASY");
+		Button button3 = new Button("Change");
+		button3.setOnAction(e -> AlertBox.display("Difficulty Changed!", "Game difficulty set to Easy."));		
+		
+		//Change Difficulty Button (Normal)
+		Label label4 = new Label("NORMAL");
+		Button button4 = new Button("Change");
+		button4.setOnAction(e -> AlertBox.display("Difficulty Changed!", "Game difficulty set to Normal."));		
+		
+		//Change Difficulty Button (Hard)
+		Label label5 = new Label("HARD");
+		Button button5 = new Button("Change");
+		button5.setOnAction(e -> AlertBox.display("Difficulty Changed!", "Game difficulty set to Hard."));	
+		
+		//Scenes
 		//Main Menu layout
 		VBox mainMenu = new VBox(50);
 		mainMenu.getChildren().addAll(label1, button1, label2, button2);
 		Menu = new Scene(mainMenu, 600, 800);
+		
+		//Change difficulty layout
+		VBox changeDifficulty = new VBox(50);
+		changeDifficulty.getChildren().addAll(label3, button3, label4, button4, label5, button5);
+		Difficulty = new Scene(changeDifficulty, 600, 800);
 		
 		//Game layout
 		background = new MyStage();
@@ -59,6 +81,7 @@ public class Main extends Application {
 	    window.setScene(Menu);
 	    window.setTitle("Frogger Game");
 		window.show();
+		window.setResizable(false); //prevent user from resizing the game window that will introduce scaling errors
 		
 		BackgroundImage froggerback = new BackgroundImage("file:src/assets/img/bgtest.png");
 	    
