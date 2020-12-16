@@ -22,7 +22,7 @@ import javafx.util.Duration;
 public class Main extends Application {
 	
 	Stage window;
-	Scene Menu, Game;
+	Scene Menu, Game, Difficulty;
 	
 	AnimationTimer timer;
 	MyStage background;
@@ -38,13 +38,18 @@ public class Main extends Application {
 		window = primaryStage;
 		
 		//Button 1
-		Label label1 = new Label("Welcome to Frogger Game");
+		Label label1 = new Label("Welcome to Frogger Game!");
 		Button button1 = new Button("Go to game");
 		button1.setOnAction(e -> window.setScene(Game));
 		
+		//Button 2
+		Label label2 = new Label("Change game difficulty:");
+		Button button2 = new Button("Change");
+		button2.setOnAction(e -> window.setScene(Difficulty));		
+		
 		//Main Menu layout
 		VBox mainMenu = new VBox(50);
-		mainMenu.getChildren().addAll(label1, button1);
+		mainMenu.getChildren().addAll(label1, button1, label2, button2);
 		Menu = new Scene(mainMenu, 600, 800);
 		
 		//Game layout
@@ -95,7 +100,7 @@ public class Main extends Application {
 		background.add(new Obstacle("file:src/assets/img/truck2Right.png", 0, 540, 0.5, 200, 200));
 		background.add(new Obstacle("file:src/assets/img/truck2Right.png", 500, 540, 0.5, 200, 200));
 		background.add(new Obstacle("file:src/assets/img/car1Left.png", 500, 490, -1, 50, 50));
-		background.add(new Digit(0, 30, 360, 25));
+		background.add(new Digit(0, 30, 540, 25));
 		background.start();
 		
 		start();  
@@ -137,7 +142,7 @@ public class Main extends Application {
     		  int d = n / 10;
     		  int k = n - d * 10;
     		  n = d;
-    		  background.add(new Digit(k, 30, 360 - shift, 25));
+    		  background.add(new Digit(k, 30, 540 - shift, 25));
     		  shift+=30;
     		}
     }
