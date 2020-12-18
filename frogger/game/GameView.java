@@ -50,8 +50,6 @@ public class GameView {
     background.add(new End(398, 96));
     background.add(new End(528, 96));
 	
-	animal = new Animal("file:src/assets/img/froggerUp.png");
-	
 	background.add(animal);/*
 	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 0, 649, 0.5, 120, 120));
 	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 300, 649, 0.5, 120, 120));
