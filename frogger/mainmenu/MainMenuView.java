@@ -29,6 +29,7 @@ public class MainMenuView {
 		
 		stage.setScene(menu);
 		stage.setTitle("Frogger Game");
+		stage.setResizable(false);
 		stage.show();
 	}
 }

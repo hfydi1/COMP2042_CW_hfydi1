@@ -3,12 +3,18 @@ package frogger.actor;
 import java.util.ArrayList;
 
 import javafx.event.EventHandler;
-
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-
+/**
+ * {@code Animal} holds a playable character that handles {@code KeyEvents}, in this case "W A S D" keys
+ * from the player. Animal instance interacts with other nodes that interacts with it.
+ * 
+ * This class is about the sprite(frog) that the user is playing as.
+ * @author daudho
+ * 
+ */
 public class Animal extends Actor {
 	
 	private Image imgW1;
@@ -35,6 +41,11 @@ public class Animal extends Actor {
 	int carD = 0;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
+	
+	/**
+	 * Animal is created by getting the parameter imageLink.
+	 * @param imageLink is used to get images to display the sprite(frog) in the game scene.
+	 */
 	public Animal(String imageLink) {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
@@ -47,7 +58,12 @@ public class Animal extends Actor {
 		imgA2 = new Image("file:src/assets/img/froggerLeftJump.png", imgSize, imgSize, true, true);
 		imgS2 = new Image("file:src/assets/img/froggerDownJump.png", imgSize, imgSize, true, true);
 		imgD2 = new Image("file:src/assets/img/froggerRightJump.png", imgSize, imgSize, true, true);
+		
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
+			/**
+			 * Handles movement and animation for the sprite(frog) as the player uses "W A S D" keys to move.
+			 * 
+			 */
 			public void handle(KeyEvent event){
 				if (noMove) {
 					
@@ -134,9 +150,11 @@ public class Animal extends Actor {
 		});
 	}
 	
+	/**
+	 * Used to reflect the death of frog on the game scene.
+	 */
 	@Override
 	public void act(long now) {
-		int bounds = 0;
 		if (getY()<0 || getY()>734) {
 			setX(300);
 			setY(679.8+movement);
@@ -249,14 +267,29 @@ public class Animal extends Actor {
 			//setY(679.8+movement);
 		}
 	}
+	
+	/**
+	 *
+	 * @return when 5 frogs enter the "End" box, game stops.
+	 */
 	public boolean getStop() {
 		return end==5;
 	}
 	
+	
+	/**
+	 *
+	 * @return returns points from playing
+	 */
 	public int getPoints() {
 		return points;
 	}
 	
+	
+	/**
+	 * 
+	 * @return true if score is changed, false if score is not changed.
+	 */
 	public boolean changeScore() {
 		if (changeScore) {
 			changeScore = false;
@@ -266,6 +299,7 @@ public class Animal extends Actor {
 		
 	}
 
+	//Getters and setters
 	public Image getImgW1() {
 		return imgW1;
 	}

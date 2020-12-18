@@ -12,17 +12,29 @@ import frogger.world.MyStage;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Displays everything in the game scene.
+ * 
+ * @author daudho
+ *
+ */
 public class GameView {
 	
+	/**
+	 * Get parameters to create a start instance.
+	 * @param primaryStage game stage.
+	 * @param background game background.
+	 * @param Game game scene.
+	 * @param animal player.
+	 */
 	public void start(Stage primaryStage, MyStage background, Scene Game, Animal animal) {
 		
-		//Difficulty speed modifier
-				Difficulty game = new Difficulty();
-				double logSpeed1 = game.getLogSpeed1();
-				double logSpeed2 = game.getLogSpeed2();
-				int turtleSpeed = game.getTurtleSpeed();
-				//double obstacleSpeed = game.getObstacleSpeed();
-				
+	//Difficulty speed modifier
+	Difficulty game = new Difficulty();
+	double logSpeed1 = game.getLogSpeed1();
+	double logSpeed2 = game.getLogSpeed2();
+	int turtleSpeed = game.getTurtleSpeed();
+	//double obstacleSpeed = game.getObstacleSpeed();
 				
 	BackgroundImage froggerback = new BackgroundImage("file:src/assets/img/bgtest.png");
     

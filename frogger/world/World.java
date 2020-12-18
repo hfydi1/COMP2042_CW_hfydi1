@@ -3,8 +3,7 @@ package frogger.world;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import frogger.actor.Actor;
+import frogger.actor.*;
 import javafx.animation.AnimationTimer;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -12,14 +11,20 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 
-
+/**
+ * Base class for the layout of the game.
+ * 
+ * @author daudho
+ *
+ */
 public abstract class World extends Pane {
     private AnimationTimer timer;
     
+    /**
+     * Handler that listens to the changes and handles the game while the program is running.
+     */
     public World() {
     	
     	sceneProperty().addListener(new ChangeListener<Scene>() {
@@ -64,7 +69,10 @@ public abstract class World extends Pane {
     		
 		});
     }
-
+    
+    /**
+     * Create timer for the game on program start.
+     */
     public void createTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -79,24 +87,44 @@ public abstract class World extends Pane {
             }
         };
     }
-
+    
+    /**
+     * Start game timer.
+     */
     public void start() {
     	createTimer();
         timer.start();
     }
-
+    
+    /**
+     * Stop game timer.
+     */
     public void stop() {
         timer.stop();
     }
     
+    /**
+     * For addition of an actor
+     * @param actor
+     */
     public void add(Actor actor) {
         getChildren().add(actor);
     }
-
+    
+    /**
+     * For removal of an actor
+     * @param actor
+     */
     public void remove(Actor actor) {
         getChildren().remove(actor);
     }
-
+    
+    /**
+     * Get a list of all child nodes attached to the root node.
+     * @param <A>
+     * @param cls
+     * @return an ArrayList of all child nodes.
+     */
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (Node n: getChildren()) {
@@ -106,6 +134,11 @@ public abstract class World extends Pane {
         }
         return someArray;
     }
-
+    
+    /**
+     * 
+     * @param now The timestamp of the current frame given  in nanoseconds.
+     * This will be the same value for all AnimationTimers called during one frame.
+     */
     public abstract void act(long now);
 }

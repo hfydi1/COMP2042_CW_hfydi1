@@ -2,27 +2,35 @@ package frogger.actor;
 
 import javafx.scene.image.Image;
 
+/**
+ * Responsible for the movement of turtles.
+ * Acts as a stepping stone for the frog to cross the water safely.
+ * 
+ * @author daudho
+ *
+ */
 public class Turtle extends Actor{
 	private Image turtle1;
 	private Image turtle2;
 	private Image turtle3;
-	private int speed;
+	private double speed;
 	boolean bool = true;
+	
+	/**
+	 * Get the actual position of the turtle.
+	 */
 	@Override
 	public void act(long now) {
-
-				if (now/900000000  % 3 ==0) {
-					setImage(turtle2);
-					
-				}
-				else if (now/900000000 % 3 == 1) {
-					setImage(turtle1);
-					
-				}
-				else if (now/900000000 %3 == 2) {
-					setImage(turtle3);
-					
-				}
+		
+		if (now/900000000  % 3 ==0) {
+			setImage(turtle2);		
+			}
+		else if (now/900000000 % 3 == 1) {
+			setImage(turtle1);	
+			}
+		else if (now/900000000 %3 == 2) {
+			setImage(turtle3);		
+			}
 			
 		move(speed , 0);
 		if (getX() > 600 && speed>0)
@@ -31,6 +39,8 @@ public class Turtle extends Actor{
 			setX(600);
 	}
 	
+	
+	//Getter and setters
 	public Image getTurtle1() {
 		return turtle1;
 	}
@@ -55,6 +65,15 @@ public class Turtle extends Actor{
 		this.turtle3 = turtle3;
 	}
 	
+	
+	/**
+	 * Construct for turtle that takes in x-axis, y-axis, speed, width and height.
+	 * @param xpos x-axis of turtle on game scene.
+	 * @param ypos y-axis of turtle on game scene.
+	 * @param s speed of turtle.
+	 * @param w width of turtle image.
+	 * @param h height of turtle image.
+	 */
 	public Turtle(int xpos, int ypos, int s, int w, int h) {
 		turtle1 = new Image("file:src/assets/img/TurtleAnimation1.png", w, h, true, true);
 		turtle2 = new Image("file:src/assets/img/TurtleAnimation2.png", w, h, true, true);

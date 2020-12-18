@@ -54,7 +54,7 @@ public class MainMenuModel {
 	public void setPlayButton(Button playButton) {
 		playButton.setOnAction(e -> {
 			try {
-				sm.openGame();
+				sm.openGameScene();
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
