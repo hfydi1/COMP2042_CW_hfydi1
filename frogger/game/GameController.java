@@ -1,17 +1,17 @@
 package frogger.game;
 
 public class GameController {
-	private GameView gameview;
-	private GameModel gamemodel;
+	private GameView view;
+	private GameModel model;
 	
-	public GameController(GameView gameview, GameModel gamemodel){
-		this.gameview = gameview;
-		this.gamemodel = gamemodel;
+	public GameController(GameView view, GameModel model){
+		this.view = view;
+		this.model = model;
 	}
 	
 	public void StartGame() throws Exception {
-		gameview.start(gamemodel.getStage(), gamemodel.getBackground(), gamemodel.getGame(), gamemodel.getAnimal());
-		gamemodel.start();
+		view.start(model.getStage(), model.getBackground(), model.getGame(), model.getAnimal());
+		model.start();
 	}
 	
 }
