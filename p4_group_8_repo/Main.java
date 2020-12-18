@@ -3,9 +3,11 @@ package p4_group_8_repo;
 import java.io.File;
 import java.util.List;
 
+import frogger.actor.Animal;
 import frogger.game.GameController;
 import frogger.game.GameModel;
 import frogger.game.GameView;
+import frogger.world.MyStage;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

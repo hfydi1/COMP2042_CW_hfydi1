@@ -1,23 +1,13 @@
 package frogger.game;
 
+import frogger.actor.Animal;
+import frogger.actor.Digit;
+import frogger.world.MyStage;
 import javafx.animation.AnimationTimer;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.control.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-import p4_group_8_repo.Animal;
-import p4_group_8_repo.Digit;
-import p4_group_8_repo.MyStage;
 
 
 public class GameModel {

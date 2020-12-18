@@ -1,29 +1,16 @@
 package frogger.game;
 
-import javafx.animation.AnimationTimer;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import p4_group_8_repo.*;
+import frogger.actor.Animal;
+import frogger.actor.BackgroundImage;
+import frogger.actor.Digit;
+import frogger.actor.End;
+import frogger.actor.Log;
+import frogger.actor.Turtle;
+import frogger.actor.WetTurtle;
+import frogger.world.MyStage;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.control.*;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-import p4_group_8_repo.Animal;
-import p4_group_8_repo.BackgroundImage;
-import p4_group_8_repo.Difficulty;
-import p4_group_8_repo.Digit;
-import p4_group_8_repo.End;
-import p4_group_8_repo.Log;
-import p4_group_8_repo.MyStage;
-import p4_group_8_repo.Turtle;
-import p4_group_8_repo.WetTurtle;
 
 public class GameView {
 	
@@ -34,7 +21,7 @@ public class GameView {
 				double logSpeed1 = game.getLogSpeed1();
 				double logSpeed2 = game.getLogSpeed2();
 				int turtleSpeed = game.getTurtleSpeed();
-				double obstacleSpeed = game.getObstacleSpeed();
+				//double obstacleSpeed = game.getObstacleSpeed();
 				
 				
 	BackgroundImage froggerback = new BackgroundImage("file:src/assets/img/bgtest.png");
