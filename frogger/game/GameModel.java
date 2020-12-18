@@ -18,6 +18,38 @@ public class GameModel {
 	private Animal animal;
 	
 	AnimationTimer timer;
+    
+    public GameModel(Stage stage){
+    	this.primaryStage = stage;
+    	background = new MyStage();
+    	Game = new Scene(background, 600, 800);
+    	animal = new Animal("file:src/assets/img/froggerUp.png");
+    }
+    
+	public Stage getStage() {
+		return primaryStage;
+	}
+	public void setStage(Stage stage) {
+		this.primaryStage = stage;
+	}
+	public Scene getGame() {
+		return Game;
+	}
+	public void setGame(Scene game) {
+		Game = game;
+	}
+	public MyStage getBackground() {
+		return background;
+	}
+	public void setBackground(MyStage background) {
+		this.background = background;
+	}
+	public Animal getAnimal() {
+		return animal;
+	}
+	public void setAnimal(Animal animal) {
+		this.animal = animal;
+	}
 	
 	public void createTimer() {
         timer = new AnimationTimer() {
@@ -62,37 +94,5 @@ public class GameModel {
     		  shift+=30;
     		}
     }
-    
-    public GameModel(Stage stage){
-    	this.primaryStage = stage;
-    	background = new MyStage();
-    	Game = new Scene(background, 600, 800);
-    	animal = new Animal("file:src/assets/img/froggerUp.png");
-    }
-    
-	public Stage getStage() {
-		return primaryStage;
-	}
-	public void setStage(Stage stage) {
-		this.primaryStage = stage;
-	}
-	public Scene getGame() {
-		return Game;
-	}
-	public void setGame(Scene game) {
-		Game = game;
-	}
-	public MyStage getBackground() {
-		return background;
-	}
-	public void setBackground(MyStage background) {
-		this.background = background;
-	}
-	public Animal getAnimal() {
-		return animal;
-	}
-	public void setAnimal(Animal animal) {
-		this.animal = animal;
-	}
     
 }
