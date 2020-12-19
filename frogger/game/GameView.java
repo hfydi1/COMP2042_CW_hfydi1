@@ -35,7 +35,9 @@ public class GameView {
 	double logSpeed1 = game.getLogSpeed1();
 	double logSpeed2 = game.getLogSpeed2();
 	int turtleSpeed = game.getTurtleSpeed();
-	double obstacleSpeed = game.getObstacleSpeed();
+	int wetTurtleSpeed = game.getWetTurtleSpeed();
+	double obstacleSpeed1 = game.getObstacleSpeed1();
+	double obstacleSpeed2 = game.getObstacleSpeed2();
 				
 	BackgroundImage froggerback = new BackgroundImage("file:src/assets/img/scene/gamebackground.png");
     
@@ -52,10 +54,10 @@ public class GameView {
 	
 	background.add(new Turtle(500, 376, turtleSpeed, 130, 130));
 	background.add(new Turtle(300, 376, turtleSpeed, 130, 130));
-	background.add(new WetTurtle(700, 376, -1, 130, 130));
-	background.add(new WetTurtle(600, 217, -1, 130, 130));
-	background.add(new WetTurtle(400, 217, -1, 130, 130));
-	background.add(new WetTurtle(200, 217, -1, 130, 130));
+	background.add(new WetTurtle(700, 376, wetTurtleSpeed, 130, 130));
+	background.add(new WetTurtle(600, 217, wetTurtleSpeed, 130, 130));
+	background.add(new WetTurtle(400, 217, wetTurtleSpeed, 130, 130));
+	background.add(new WetTurtle(200, 217, wetTurtleSpeed, 130, 130));
 
 	background.add(new End(13, 96)); // End represent the boxes at the end of the map
     background.add(new End(141, 96));
@@ -64,17 +66,17 @@ public class GameView {
     background.add(new End(528, 96));
 	
 	background.add(animal);
-	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 0, 649, 0.5, 120, 120));
-	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 300, 649, 0.5, 120, 120));
-	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 600, 649, 0.5, 120, 120));
+	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 0, 649, obstacleSpeed1, 120, 120));
+	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 300, 649, obstacleSpeed1, 120, 120));
+	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 600, 649, obstacleSpeed1, 120, 120));
 	
-	background.add(new Obstacle("file:src/assets/img/car1Left.png", 100, 597, -0.5, 50, 50));
-	background.add(new Obstacle("file:src/assets/img/car1Left.png", 250, 597, -0.5, 50, 50));
-	background.add(new Obstacle("file:src/assets/img/car1Left.png", 400, 597, -0.5, 50, 50));
-	background.add(new Obstacle("file:src/assets/img/car1Left.png", 550, 597, -0.5, 50, 50));
-	background.add(new Obstacle("file:src/assets/img/truck2Right.png", 0, 540, 0.5, 200, 200));
-	background.add(new Obstacle("file:src/assets/img/truck2Right.png", 500, 540, 0.5, 200, 200));
-	background.add(new Obstacle("file:src/assets/img/car1Left.png", 500, 490, -1, 50, 50));
+	background.add(new Obstacle("file:src/assets/img/car1Left.png", 100, 597, -obstacleSpeed1, 50, 50));
+	background.add(new Obstacle("file:src/assets/img/car1Left.png", 250, 597, -obstacleSpeed1, 50, 50));
+	background.add(new Obstacle("file:src/assets/img/car1Left.png", 400, 597, -obstacleSpeed1, 50, 50));
+	background.add(new Obstacle("file:src/assets/img/car1Left.png", 550, 597, -obstacleSpeed1, 50, 50));
+	background.add(new Obstacle("file:src/assets/img/truck2Right.png", 0, 540, obstacleSpeed1, 200, 200));
+	background.add(new Obstacle("file:src/assets/img/truck2Right.png", 500, 540, obstacleSpeed1, 200, 200));
+	background.add(new Obstacle("file:src/assets/img/car1Left.png", 500, 490, obstacleSpeed2, 50, 50));
 	background.add(new Digit(0, 30, 540, 25));
 	background.start();
 

@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import p4_group_8_repo.Difficulty;
 
 /**
  * {@code Animal} holds a playable character that handles {@code KeyEvents}, in this case "W A S D" keys
@@ -42,6 +43,12 @@ public class Animal extends Actor {
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
 	
+	Difficulty game = new Difficulty();
+	double logSpeed1 = game.getLogSpeed1();
+	double logSpeed2 = game.getLogSpeed2();
+	int turtleSpeed = game.getTurtleSpeed();
+	int wetTurtleSpeed = game.getWetTurtleSpeed();
+
 	/**
 	 * Animal is created by getting the parameter imageLink.
 	 * @param imageLink is used to get images to display the sprite(frog) in the game scene.
@@ -233,18 +240,18 @@ public class Animal extends Actor {
 		}
 		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
 			if(getIntersectingObjects(Log.class).get(0).getLeft())
-				move(-1,0);
+				move(logSpeed2,0);
 			else
-				move (0.2,0);
+				move (logSpeed1,0);
 		}
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) {
-			move(-1,0);
+			move(turtleSpeed,0);
 		}
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {
 				waterDeath = true;
 			} else {
-				move(-1,0);
+				move(wetTurtleSpeed,0);
 			}
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
@@ -262,7 +269,7 @@ public class Animal extends Actor {
 			setY(679.8+movement);
 		}
 		else if (getY()<413){
-			waterDeath = false;
+			waterDeath = true;
 			//setX(300);
 			//setY(679.8+movement);
 		}

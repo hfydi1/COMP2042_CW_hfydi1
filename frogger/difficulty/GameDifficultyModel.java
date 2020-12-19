@@ -4,6 +4,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import p4_group_8_repo.SceneManager;
 
 /**
@@ -18,6 +20,7 @@ public class GameDifficultyModel {
 	private Group group;
 	private Button easyButton, normalButton, hardButton, playButton;
 	private SceneManager sm;
+	private int choice, diff;
 	
 	/**
 	 * Construct of GameDifficultyModel that takes in primaryStage as parameter.
@@ -32,6 +35,10 @@ public class GameDifficultyModel {
 		hardButton = new Button("HARD");
 		playButton = new Button("Play Game");
 		sm = new SceneManager(stage);
+	}
+	
+	public GameDifficultyModel() {
+		choice = diff;
 	}
 	
 	//Setters and getters
@@ -90,7 +97,13 @@ public class GameDifficultyModel {
 	public void setEasyButton(Button easyButton) {
 		easyButton.setOnAction(e -> {
 			try {
-				sm.openMainMenu();
+				diff = 1;
+				Alert alert = new Alert(AlertType.INFORMATION);
+	    		alert.setTitle("Difficulty Changed!");
+	    		alert.setHeaderText("Difficulty set to EASY");
+	    		alert.setContentText("Other difficulty available: NORMAL and HARD");
+	    		alert.show();
+	    		sm.openGameScene();
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
@@ -112,7 +125,13 @@ public class GameDifficultyModel {
 	public void setNormalButton(Button normalButton) {
 		normalButton.setOnAction(e -> {
 			try {
-				sm.openMainMenu();
+				diff = 2;
+				Alert alert = new Alert(AlertType.INFORMATION);
+	    		alert.setTitle("Difficulty Changed!");
+	    		alert.setHeaderText("Difficulty set to NORMAL");
+	    		alert.setContentText("Other difficulty available: EASY and HARD");
+	    		alert.show();
+	    		sm.openGameScene();
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
@@ -134,7 +153,13 @@ public class GameDifficultyModel {
 	public void setHardButton(Button hardButton) {
 		hardButton.setOnAction(e -> {
 			try {
-				sm.openMainMenu();
+				diff = 3;
+				Alert alert = new Alert(AlertType.INFORMATION);
+	    		alert.setTitle("Difficulty Changed!");
+	    		alert.setHeaderText("Difficulty set to HARD");
+	    		alert.setContentText("Other difficulty available: EASY and NORMAL");
+	    		alert.show();
+	    		sm.openGameScene();
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
@@ -171,4 +196,17 @@ public class GameDifficultyModel {
 		return playButton;
 	}
 	
+	/**
+	 * Set difficulty modifier
+	 */
+	public void setChoice(int choice) {
+		this.choice = choice;
+	}
+	
+	/**
+	 * @return an integer
+	 */
+	public int getChoice() {
+		return this.choice;
+	}
 }
