@@ -6,6 +6,7 @@ import frogger.actor.BackgroundImage;
 import frogger.actor.Digit;
 import frogger.actor.End;
 import frogger.actor.Log;
+import frogger.actor.Obstacle;
 import frogger.actor.Turtle;
 import frogger.actor.WetTurtle;
 import frogger.world.MyStage;
@@ -34,7 +35,7 @@ public class GameView {
 	double logSpeed1 = game.getLogSpeed1();
 	double logSpeed2 = game.getLogSpeed2();
 	int turtleSpeed = game.getTurtleSpeed();
-	//double obstacleSpeed = game.getObstacleSpeed();
+	double obstacleSpeed = game.getObstacleSpeed();
 				
 	BackgroundImage froggerback = new BackgroundImage("file:src/assets/img/scene/gamebackground.png");
     
@@ -62,7 +63,7 @@ public class GameView {
     background.add(new End(398, 96));
     background.add(new End(528, 96));
 	
-	background.add(animal);/*
+	background.add(animal);
 	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 0, 649, 0.5, 120, 120));
 	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 300, 649, 0.5, 120, 120));
 	background.add(new Obstacle("file:src/assets/img/truck1Right.png", 600, 649, 0.5, 120, 120));
@@ -73,7 +74,7 @@ public class GameView {
 	background.add(new Obstacle("file:src/assets/img/car1Left.png", 550, 597, -0.5, 50, 50));
 	background.add(new Obstacle("file:src/assets/img/truck2Right.png", 0, 540, 0.5, 200, 200));
 	background.add(new Obstacle("file:src/assets/img/truck2Right.png", 500, 540, 0.5, 200, 200));
-	background.add(new Obstacle("file:src/assets/img/car1Left.png", 500, 490, -1, 50, 50));*/
+	background.add(new Obstacle("file:src/assets/img/car1Left.png", 500, 490, -1, 50, 50));
 	background.add(new Digit(0, 30, 540, 25));
 	background.start();
 
