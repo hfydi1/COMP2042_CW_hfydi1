@@ -26,7 +26,7 @@ public class GameDifficultyView {
 	 */
 	public void gamedifficultyscene(Stage stage, Group group, Scene gamedifficultyscene, Button easyButton, Button normalButton, Button hardButton, Button playButton) {
 		
-		group.getChildren().add(new BackgroundImage("file:src/assets/img/scene/gamedifficultyscene.png"));
+		group.getChildren().add(new BackgroundImage("file:src/assets/img/scene/difficultyscene.png"));
 		
 		//Easy Button
 		easyButton.setLayoutX(460);
