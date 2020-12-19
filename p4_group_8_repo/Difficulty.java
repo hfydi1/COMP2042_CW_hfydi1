@@ -45,7 +45,7 @@ public class Difficulty {
 			s3 = -4;
 			s4 = 2;
 			s5 = 2.5;
-			s6 = -1;
+			s6 = -4;
 			break;
 		default:
 			s1 = 0.2;
