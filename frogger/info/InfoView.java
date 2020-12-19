@@ -26,7 +26,7 @@ public class InfoView {
 	 */
 	public void infoscene(Stage stage, Group group, Scene infoscene, Button backButton) {
 		
-		group.getChildren().add(new BackgroundImage("file:src/assets/img/info.png"));
+		group.getChildren().add(new BackgroundImage("file:src/assets/img/scene/infoscene.png"));
 		
 		//Play Game button
 		backButton.setLayoutX(460);

@@ -10,9 +10,9 @@ public class MainMenuController {
 	}
 	
 	public void runMainMenu() throws Exception {
-		view.menu(model.getStage(), model.getGroup(), model.getScene(), model.getPlayButton(), model.getGameInfoButton());
+		view.menu(model.getStage(), model.getGroup(), model.getScene(), model.getPlayButton(), model.getDifficultyButton(), model.getGameInfoButton());
 		model.setPlayButton(model.getPlayButton());
+		model.setDifficultyButton(model.getDifficultyButton());
 		model.setGameInfoButton(model.getGameInfoButton());
-	
 	}
 }

@@ -36,7 +36,7 @@ public class GameView {
 	int turtleSpeed = game.getTurtleSpeed();
 	//double obstacleSpeed = game.getObstacleSpeed();
 				
-	BackgroundImage froggerback = new BackgroundImage("file:src/assets/img/bgtest.png");
+	BackgroundImage froggerback = new BackgroundImage("file:src/assets/img/scene/gamebackground.png");
     
 	background.add(froggerback);
 	

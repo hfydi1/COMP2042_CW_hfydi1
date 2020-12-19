@@ -4,6 +4,7 @@ import frogger.game.*;
 import frogger.mainmenu.*;
 import frogger.info.*;
 import frogger.endgame.*;
+import frogger.difficulty.*;
 import javafx.stage.Stage;
 
 public class SceneManager {
@@ -59,6 +60,17 @@ public class SceneManager {
 		EndGameModel model = new EndGameModel(primaryStage);
 		EndGameController controller = new EndGameController(view, model);
 		controller.runEndGameScene();
+	}
+	
+	/**
+	 * Method to show game difficulty scene.
+	 * @throws Exception
+	 */
+	public void openDifficultyScene() throws Exception {
+		GameDifficultyView view = new GameDifficultyView();
+		GameDifficultyModel model = new GameDifficultyModel(primaryStage);
+		GameDifficultyController controller = new GameDifficultyController(view, model);
+		controller.runGameDifficultyScene();
 	}
 	
 }

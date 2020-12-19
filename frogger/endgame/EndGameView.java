@@ -26,7 +26,7 @@ public class EndGameView {
 	 */
 	public void endgamescene(Stage stage, Group group, Scene endgamescene, Button goToMainMenuButton) {
 		
-		group.getChildren().add(new BackgroundImage("file:src/assets/img/endscene.png"));
+		group.getChildren().add(new BackgroundImage("file:src/assets/img/scene/endscene.png"));
 		
 		//Back to Main Menu button
 		goToMainMenuButton.setLayoutX(460);

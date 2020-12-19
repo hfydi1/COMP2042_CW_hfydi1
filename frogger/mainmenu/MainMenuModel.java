@@ -11,7 +11,7 @@ public class MainMenuModel {
 	private Scene menu;
 	private Stage stage;
 	private Group group;
-	private Button playButton, gameInfoButton;
+	private Button playButton, difficultyButton, gameInfoButton;
 	private SceneManager sm;
 	
 	public MainMenuModel(Stage stage) {
@@ -19,6 +19,7 @@ public class MainMenuModel {
 		group = new Group();
 		menu = new Scene(group, 600, 800);
 		playButton = new Button("Play");
+		difficultyButton = new Button("Change Difficulty");
 		gameInfoButton = new Button("Game Info");
 		sm = new SceneManager(stage);
 	}
@@ -63,6 +64,20 @@ public class MainMenuModel {
 	
 	public Button getPlayButton() {
 		return playButton;
+	}
+	
+	public void setDifficultyButton(Button difficultyButton) {
+		difficultyButton.setOnAction(e -> {
+			try {
+				sm.openDifficultyScene();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		});
+	}
+	
+	public Button getDifficultyButton() {
+		return difficultyButton;
 	}
 	
 	public void setGameInfoButton(Button gameInfoButton) {
