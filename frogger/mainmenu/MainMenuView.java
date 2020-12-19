@@ -5,12 +5,27 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+/**
+ * Displays everything in the main menu scene.
+ * 
+ * @author daudho
+ *
+ */
 public class MainMenuView {
 	public MainMenuView() {
 		
 	}
 	
+	/**
+	 * Get parameters to create menu
+	 * @param stage menu stage
+	 * @param group menu group
+	 * @param menu scene
+	 * @param playButton button to play the game
+	 * @param difficultyButton button to change game difficulty
+	 * @param gameInfoButton button to check game info
+	 * @throws Exception
+	 */
 	public void menu(Stage stage, Group group, Scene menu, Button playButton, Button difficultyButton, Button gameInfoButton) throws Exception {
 		
 		group.getChildren().add(new BackgroundImage("file:src/assets/img/scene/mainmenuscene.png"));
