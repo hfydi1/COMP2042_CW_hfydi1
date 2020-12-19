@@ -4,10 +4,6 @@ import java.io.File;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
-import frogger.actor.*;
-import frogger.game.*;
-import frogger.mainmenu.*;
 
 /**
  * Acts as the background for the game.
